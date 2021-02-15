@@ -13,8 +13,9 @@ const Directory = () => {
         return (
           <MenuItem
             key={section.id}
-            title={section.title}
+            title={section.title.toUpperCase()}
             imageUrl={section.imageUrl}
+            size={section.size}
           />
         );
       })}
