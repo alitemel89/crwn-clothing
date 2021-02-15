@@ -11,10 +11,14 @@
     
     &:hover {
       cursor: pointer;
+      
 
       & .background-image {
         transform: scale(1.1);
         transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        filter: blur(1px);
+
+        
       }
     }
     
@@ -49,6 +53,11 @@
       background-color: white;
       opacity: .7;
       position: absolute;
+
+      &:hover {
+        opacity: 1;
+        background-color: white;
+      }
   
       .title {
         font-weight: bold;
