@@ -9,9 +9,9 @@ const ShopPage = () => {
   return (
 
       <div className="shop-page">    
-      {collections.map(({ id, ...restProps }) => {
+      {collections.map(({ id, ...otherCollectionProps }) => {
           return (
-            <PreviewCollection key={id} {...restProps} />
+            <PreviewCollection key={id} {...otherCollectionProps} />
           )      
       })}
       </div>
