@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import "./SignIn.scss";
 import FormInput from "../FormInput/FormInput";
 import { CustomButton } from "../CustomButton/CustomButton";
+import { signInWithGoogle } from '../../firebase/FirebaseUtils';
 
 const SignIn = () => {
   const [userInput, setUserInput] = useReducer(
@@ -47,7 +48,7 @@ const SignIn = () => {
 
         <div className="buttons">
           <CustomButton type="submit"> Sign in </CustomButton>
-          <CustomButton isGoogleSignIn>
+          <CustomButton isGoogleSignIn onClick={signInWithGoogle}>
               Sign in with Google
           </CustomButton>
         </div>
