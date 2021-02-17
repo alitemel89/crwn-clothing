@@ -10,6 +10,7 @@ import { auth, createUserProfileDocument } from './firebase/FirebaseUtils';
 class App extends React.Component {
   constructor() {
     super();
+    
     this.state = {
       currentUser: null
     }
@@ -41,6 +42,7 @@ class App extends React.Component {
   }
   
   render() {
+    console.log(this.state.currentUser);
     return (
       <div>
         <Header currentUser={this.state.currentUser} />
