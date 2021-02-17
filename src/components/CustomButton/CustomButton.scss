@@ -1,0 +1,60 @@
+.btn {
+  position: relative;
+  height: 50px;
+  width: auto;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-width: 165px;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+
+  &.google-sign-in {
+      background-color: #4285f4; 
+      color: white;
+      border: none;
+  }
+
+  &:hover {
+    color: white;
+    position: relative;
+    z-index: 4;
+
+  }
+
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: transform 0.5s;
+  }
+
+  &:hover::after {
+    transform: scale(1.01, 1);
+    border-radius: 5px;
+  }
+
+  &:active::after {
+    background: #292929;
+  }
+
+  &::after {
+    transform: scale(0, 1);
+    transform-origin: 50% 0%;
+  }
+}
+
