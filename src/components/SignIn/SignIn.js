@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import "./SignIn.scss";
 import FormInput from "../FormInput/FormInput";
-import { CustomButton } from "../CustomButton/CustomButton";
+import CustomButton from "../CustomButton/CustomButton";
 import { auth, signInWithGoogle } from '../../firebase/FirebaseUtils';
 
 class SignIn extends React.Component {

@@ -17,7 +17,7 @@
   font-weight: bolder;
 
   &.google-sign-in {
-      background-color: #4285f4; 
+      background-color: #4d6285; 
       color: white;
       border: none;
   }
@@ -44,7 +44,7 @@
   }
 
   &:hover::after {
-    transform: scale(1.01, 1);
+    transform: scale(1, 1.01);
     border-radius: 5px;
   }
 
