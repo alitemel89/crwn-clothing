@@ -6,33 +6,29 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SignInAndSignUpPage from './pages/SignInAndSignUp/SignInAndSignUp';
 import { auth, createUserProfileDocument } from './firebase/FirebaseUtils';
+import { connect } from 'react-redux';
+import { setCurrentUser } from './redux/user/userActions';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    
-    this.state = {
-      currentUser: null
-    }
-  }
 
   unsubscribeFromAuth = () => null;
 
   componentDidMount() {
+
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapshot => {
-          this.setState({
-            currentUser: {
+          setCurrentUser({
               id: snapshot.id,
               ...snapshot.data()
-            }
-          }, )
+            })
         })
       } else {
-        this.setState({ currentUser: userAuth })
+        setCurrentUser({ currentUser: userAuth })
       }
     })
   }
@@ -42,10 +38,9 @@ class App extends React.Component {
   }
   
   render() {
-    console.log(this.state.currentUser);
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
@@ -56,6 +51,14 @@ class App extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+      setCurrentUser: user => dispatch(setCurrentUser(user))
+    }
+}
 
 
-export default App;
+export default connect(
+  null, 
+  mapDispatchToProps
+)(App);
