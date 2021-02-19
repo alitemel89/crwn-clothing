@@ -7,7 +7,7 @@ import "./Header.scss";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
-const Header = (props) => {
+const Header = ({ currentUser }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -21,10 +21,10 @@ const Header = (props) => {
           CONTACT
         </Link>
         {
-            props.currentUser ? (
+            currentUser ? (
                 <div className="option" onClick={() => auth.signOut()}> SIGN OUT </div>
-            ) :
-            <Link className="option" to="/signIn">
+            ) : 
+            <Link className="option" to="/signin">
                 SIGN IN
             </Link>
         }
@@ -39,7 +39,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(
-  mapStateToProps,
-  
-)(Header);
+export default connect(mapStateToProps)(Header);
