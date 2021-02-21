@@ -15,11 +15,15 @@
   }
 
   .btn {
+    display: block;
+    float: none;
     width: 80%;
-    opacity: 0.7;
+    opacity: 0.95;
     position: absolute;
     top: 255px;
     right: 30px;
+    max-width: 100%;
+
   }
 
   &:hover {
