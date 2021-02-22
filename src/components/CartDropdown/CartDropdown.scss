@@ -15,10 +15,24 @@
       height: 240px;
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
+    }
+
+    .cart-items::-webkit-scrollbar  {
+      width: 5px;
+
+    }
+
+    .cart-items::-webkit-scrollbar-thumb {
+      background-color: #ccc;    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+
     }
   
     button {
-      margin: 0 auto;
-      display:block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      display: block;
     }
 }
