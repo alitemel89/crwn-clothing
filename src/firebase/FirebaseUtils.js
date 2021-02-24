@@ -4,13 +4,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyDkjNbZyJGOU4a8Wlgxwb1KR_pQxnl41WM",
-    authDomain: "crown-db-at.firebaseapp.com",
-    projectId: "crown-db-at",
-    storageBucket: "crown-db-at.appspot.com",
-    messagingSenderId: "150208332198",
-    appId: "1:150208332198:web:cc1ddb4ef590944c348f67",
-    measurementId: "G-90V1TVXGR8"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 export const createUserProfileDocument = async (userAuth, addionalData) => {
