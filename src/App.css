@@ -10,6 +10,10 @@ a {
   
 * {
     box-sizing: border-box;
-    
+
+}
+
+.cankaraman {
+    background-color: red;
 }
 
