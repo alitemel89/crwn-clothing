@@ -53,3 +53,17 @@
       }
     }
   }
+
+@media only screen and (max-width: 500px) {
+  .homepage {
+    width: 100vw;
+    padding: 0;
+  }
+  
+  .directory-menu {
+    width: 120%;
+    padding: 0;
+    margin: 0;
+    
+  }
+}  

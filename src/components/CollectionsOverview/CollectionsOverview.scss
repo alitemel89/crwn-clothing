@@ -2,3 +2,12 @@
     display: flex;
     flex-direction: column;
 }
+
+@media only screen and (max-width: 920px) {
+    .collections-overview {
+      width: 100vw;
+      display: flex;
+      
+      
+    }
+  }
