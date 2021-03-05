@@ -21,10 +21,27 @@
       align-items: center;
       justify-content: flex-end;
   
+  
       .option {
         padding: 10px 15px;
         cursor: pointer;
       }
     }
+}
+
+@media only screen and (max-width: 605px) {
+  .header {
+    width: 100%;
+
+    .options {
+      width: 60%;
+    }
+
+
   }
+
   
+}
+
+
+
